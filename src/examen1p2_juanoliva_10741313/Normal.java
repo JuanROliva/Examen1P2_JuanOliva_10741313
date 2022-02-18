@@ -25,7 +25,7 @@ public class Normal extends Persona{
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Normal: " + super.toString();
     }
     
     

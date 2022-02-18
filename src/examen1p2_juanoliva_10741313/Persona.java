@@ -91,8 +91,8 @@ public abstract class Persona {
 
     @Override
     public String toString() {
-        if (tipoPersona) return nombre + " " + poder;
-        return nombre + " " + debilidad;
+        if (tipoPersona) return nombre + " poder: " + poder;
+        return nombre + " debilidad: " + debilidad;
     }
     
     public boolean compararNombre(Persona p){
