@@ -9,8 +9,16 @@ public class SuperHumano extends Persona{
         super();
     }
 
-    public SuperHumano(String superPoder, String nombre, String poder, String debilidad, boolean tipoPersona, Escuadron escuadron, int fuerza, int agilidadFisica, int agilidadMental) {
-        super(nombre, poder, debilidad, tipoPersona, escuadron, fuerza, agilidadFisica, agilidadMental);
+    public SuperHumano(String superPoder, String nombre, String poder, String 
+            debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, 
+            int agilidadMental) {
+        super(nombre, poder, debilidad, tipoPersona, fuerza, agilidadFisica, agilidadMental);
+        this.superPoder = superPoder;
+    }
+    
+    public SuperHumano(Persona p, String superPoder) {
+        super(p.getNombre(), p.getPoder(), p.getDebilidad(), p.isTipoPersona(), 
+                p.getFuerza(), p.getAgilidadFisica(), p.getAgilidadMental());
         this.superPoder = superPoder;
     }
     
@@ -23,24 +31,19 @@ public class SuperHumano extends Persona{
     }
 
     @Override
-    public String toString() {
-        return "SuperHumano: " + super.toString();
-    }
-
-    @Override
     public void ultimaOportunidad(Persona enemigo) {
         Random aleatorio = new Random();
-        int atributoModifcar1 = aleatorio.nextInt(3)+1;
-        switch (atributoModifcar1) {
+        int atributoModificar1 = aleatorio.nextInt(3)+1;
+        switch (atributoModificar1) {
             case 1 -> setFuerza((int)(getFuerza()*4));
             case 2 -> setAgilidadFisica((int)(getAgilidadFisica()*4));
             case 3 -> setAgilidadMental((int)(getAgilidadMental()*4));
         }
-        int atributoModifcar2 = aleatorio.nextInt(3)+1;
-        while (atributoModifcar1==atributoModifcar2) {
-            atributoModifcar2 = aleatorio.nextInt(3)+1;
+        int atributoModificar2 = aleatorio.nextInt(3)+1;
+        while (atributoModificar1==atributoModificar2) {
+            atributoModificar2 = aleatorio.nextInt(3)+1;
         }
-        switch (atributoModifcar2) {
+        switch (atributoModificar2) {
             case 1 -> setFuerza((int)(getFuerza()*0.5));
             case 2 -> setAgilidadFisica((int)(getAgilidadFisica()*0.5));
             case 3 -> setAgilidadMental((int)(getAgilidadMental()*0.5));

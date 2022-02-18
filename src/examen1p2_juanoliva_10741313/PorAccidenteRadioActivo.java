@@ -10,11 +10,22 @@ public class PorAccidenteRadioActivo extends Persona{
         super();
     }
 
-    public PorAccidenteRadioActivo(int edadAccidente, String tipoAccidente, String nombre, String poder, String debilidad, boolean tipoPersona, Escuadron escuadron, int fuerza, int agilidadFisica, int agilidadMental) {
-        super(nombre, poder, debilidad, tipoPersona, escuadron, fuerza, agilidadFisica, agilidadMental);
+    public PorAccidenteRadioActivo(String nombre, String poder, 
+            String debilidad, boolean tipoPersona, int fuerza, 
+            int agilidadFisica, int agilidadMental, int edadAccidente, 
+            String tipoAccidente) {
+        super(nombre, poder, debilidad, tipoPersona, fuerza, agilidadFisica, agilidadMental);
         this.edadAccidente = edadAccidente;
         this.tipoAccidente = tipoAccidente;
     }
+    
+    public PorAccidenteRadioActivo(Persona p, int edadAccidente, String tipoAccidente) {
+        super(p.getNombre(), p.getPoder(), p.getDebilidad(), p.isTipoPersona(), 
+                p.getFuerza(), p.getAgilidadFisica(), p.getAgilidadMental());
+        this.edadAccidente = edadAccidente;
+        this.tipoAccidente = tipoAccidente;
+    }
+
 
     public int getEdadAccidente() {
         return edadAccidente;
@@ -30,11 +41,6 @@ public class PorAccidenteRadioActivo extends Persona{
 
     public void setTipoAccidente(String tipoAccidente) {
         this.tipoAccidente = tipoAccidente;
-    }
-
-    @Override
-    public String toString() {
-        return "PorAccidenteRadioActivo: " + super.toString();
     }
 
     @Override

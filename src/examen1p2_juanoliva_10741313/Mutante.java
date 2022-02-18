@@ -10,8 +10,12 @@ public class Mutante extends Persona{
         super();
     }
 
-    public Mutante(String nombre, String poder, String debilidad, boolean tipoPersona, Escuadron escuadron, int fuerza, int agilidadFisica, int agilidadMental) {
-        super(nombre, poder, debilidad, tipoPersona, escuadron, fuerza, agilidadFisica, agilidadMental);
+    public Mutante(String nombre, String poder, String debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, int agilidadMental) {
+        super(nombre, poder, debilidad, tipoPersona, fuerza, agilidadFisica, agilidadMental);
+    }
+    
+    public Mutante(Persona p) {
+        super(p.getNombre(), p.getPoder(), p.getDebilidad(), p.isTipoPersona(), p.getFuerza(), p.getAgilidadFisica(), p.getAgilidadMental());
     }
 
     public ArrayList<String> getFactoresMutantes() {
@@ -20,11 +24,6 @@ public class Mutante extends Persona{
 
     public void setFactoresMutantes(ArrayList<String> factoresMutantes) {
         this.factoresMutantes = factoresMutantes;
-    }
-
-    @Override
-    public String toString() {
-        return "Mutante: " + super.toString();
     }
 
     @Override

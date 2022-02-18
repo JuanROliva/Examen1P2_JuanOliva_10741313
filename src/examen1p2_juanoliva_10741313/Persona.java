@@ -4,7 +4,6 @@ public abstract class Persona {
     private String poder;
     private String debilidad;
     private boolean tipoPersona; //True -> Heroe : : False: -> Villano
-    private Escuadron escuadron;
     private int fuerza;
     private int agilidadFisica;
     private int agilidadMental;
@@ -13,13 +12,12 @@ public abstract class Persona {
     }
 
     public Persona(String nombre, String poder, String debilidad, 
-            boolean tipoPersona, Escuadron escuadron, int fuerza, 
+            boolean tipoPersona, int fuerza, 
             int agilidadFisica, int agilidadMental) {
         this.nombre = nombre;
         this.poder = poder;
         this.debilidad = debilidad;
         this.tipoPersona = tipoPersona;
-        this.escuadron = escuadron;
         this.fuerza = fuerza;
         this.agilidadFisica = agilidadFisica;
         this.agilidadMental = agilidadMental;
@@ -55,14 +53,6 @@ public abstract class Persona {
     
     public void setDebilidad(String debilidad) {
         this.debilidad = debilidad;
-    }
-
-    public Escuadron getEscuadron() {
-        return escuadron;
-    }
-
-    public void setEscuadron(Escuadron escuadron) {
-        this.escuadron = escuadron;
     }
 
     public int getFuerza() {
