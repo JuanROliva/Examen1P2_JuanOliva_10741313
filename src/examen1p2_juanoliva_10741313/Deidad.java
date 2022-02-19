@@ -7,13 +7,13 @@ public class Deidad extends Extraterrestre{
         super();
     }
 
-    public Deidad(boolean tieneCreyentes, String mitologiaReligion, String nombre, String poder, String debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, int agilidadMental) {
+    public Deidad(boolean tieneCreyentes, String mitologiaReligion, String nombre, String poder, String debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, int agilidadMental) throws MiExcepcion {
         super(nombre, poder, debilidad, tipoPersona, fuerza, agilidadFisica, agilidadMental);
         this.tieneCreyentes = tieneCreyentes;
         this.mitologiaReligion = mitologiaReligion;
     }
 
-    public Deidad(Persona p, boolean tieneCreyentes, String mitologiaReligion) {
+    public Deidad(Persona p, boolean tieneCreyentes, String mitologiaReligion) throws MiExcepcion {
         super(p);
         this.tieneCreyentes = tieneCreyentes;
         this.mitologiaReligion = mitologiaReligion;

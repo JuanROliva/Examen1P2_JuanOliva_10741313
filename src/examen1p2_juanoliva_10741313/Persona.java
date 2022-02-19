@@ -13,14 +13,12 @@ public abstract class Persona {
 
     public Persona(String nombre, String poder, String debilidad, 
             boolean tipoPersona, int fuerza, 
-            int agilidadFisica, int agilidadMental) {
+            int agilidadFisica, int agilidadMental) throws MiExcepcion {
         this.nombre = nombre;
         this.poder = poder;
         this.debilidad = debilidad;
         this.tipoPersona = tipoPersona;
-        this.fuerza = fuerza;
-        this.agilidadFisica = agilidadFisica;
-        this.agilidadMental = agilidadMental;
+        this.validacionDatos(fuerza, agilidadFisica, agilidadMental);
     }
 
     public String getNombre() {
@@ -87,6 +85,15 @@ public abstract class Persona {
     
     public boolean compararNombre(Persona p){
        return p.getNombre().toLowerCase().equals(nombre);
+    }
+    
+    public void validacionDatos(int fuerza, int agilidadFisica, int agilidadMental) throws MiExcepcion{
+        int suma = fuerza + agilidadFisica + agilidadFisica;
+        if (suma < 100) throw new MiExcepcion("No tiene lo que se requiere para ser Heroe o Villano");
+        if (suma > 150) throw new MiExcepcion("Se paso en sus elementos y no puede Heroe o Villano");
+        this.fuerza = fuerza;
+        this.agilidadFisica = agilidadFisica;
+        this.agilidadMental = agilidadMental;
     }
     
     public abstract void ultimaOportunidad(Persona enemigo);

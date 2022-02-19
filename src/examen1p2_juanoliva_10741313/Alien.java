@@ -11,12 +11,12 @@ public class Alien extends Extraterrestre{
     }
 
 
-    public Alien(String planetaProcedencia, String nombre, String poder, String debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, int agilidadMental) {
+    public Alien(String planetaProcedencia, String nombre, String poder, String debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, int agilidadMental) throws MiExcepcion {
         super(nombre, poder, debilidad, tipoPersona, fuerza, agilidadFisica, agilidadMental);
         this.planetaProcedencia = planetaProcedencia;
     }
 
-    public Alien(Persona p) {
+    public Alien(Persona p) throws MiExcepcion {
         super(p);
     }
     

@@ -8,11 +8,11 @@ public class Normal extends Persona{
         super();
     }
 
-    public Normal(String nombre, String poder, String debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, int agilidadMental) {
+    public Normal(String nombre, String poder, String debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, int agilidadMental) throws MiExcepcion {
         super(nombre, poder, debilidad, tipoPersona, fuerza, agilidadFisica, agilidadMental);
     }
     
-    public Normal(Persona p) {
+    public Normal(Persona p) throws MiExcepcion {
         super(p.getNombre(), p.getPoder(), p.getDebilidad(), p.isTipoPersona(), p.getFuerza(), p.getAgilidadFisica(), p.getAgilidadMental());
     }
     

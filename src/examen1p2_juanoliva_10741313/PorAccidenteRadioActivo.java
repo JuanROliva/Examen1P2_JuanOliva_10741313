@@ -13,13 +13,13 @@ public class PorAccidenteRadioActivo extends Persona{
     public PorAccidenteRadioActivo(String nombre, String poder, 
             String debilidad, boolean tipoPersona, int fuerza, 
             int agilidadFisica, int agilidadMental, int edadAccidente, 
-            String tipoAccidente) {
+            String tipoAccidente) throws MiExcepcion {
         super(nombre, poder, debilidad, tipoPersona, fuerza, agilidadFisica, agilidadMental);
         this.edadAccidente = edadAccidente;
         this.tipoAccidente = tipoAccidente;
     }
     
-    public PorAccidenteRadioActivo(Persona p, int edadAccidente, String tipoAccidente) {
+    public PorAccidenteRadioActivo(Persona p, int edadAccidente, String tipoAccidente) throws MiExcepcion {
         super(p.getNombre(), p.getPoder(), p.getDebilidad(), p.isTipoPersona(), 
                 p.getFuerza(), p.getAgilidadFisica(), p.getAgilidadMental());
         this.edadAccidente = edadAccidente;

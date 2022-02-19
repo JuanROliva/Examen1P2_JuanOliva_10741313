@@ -11,12 +11,12 @@ public class SuperHumano extends Persona{
 
     public SuperHumano(String superPoder, String nombre, String poder, String 
             debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, 
-            int agilidadMental) {
+            int agilidadMental) throws MiExcepcion {
         super(nombre, poder, debilidad, tipoPersona, fuerza, agilidadFisica, agilidadMental);
         this.superPoder = superPoder;
     }
     
-    public SuperHumano(Persona p, String superPoder) {
+    public SuperHumano(Persona p, String superPoder) throws MiExcepcion {
         super(p.getNombre(), p.getPoder(), p.getDebilidad(), p.isTipoPersona(), 
                 p.getFuerza(), p.getAgilidadFisica(), p.getAgilidadMental());
         this.superPoder = superPoder;

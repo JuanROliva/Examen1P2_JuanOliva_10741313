@@ -10,11 +10,11 @@ public class Mutante extends Persona{
         super();
     }
 
-    public Mutante(String nombre, String poder, String debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, int agilidadMental) {
+    public Mutante(String nombre, String poder, String debilidad, boolean tipoPersona, int fuerza, int agilidadFisica, int agilidadMental) throws MiExcepcion {
         super(nombre, poder, debilidad, tipoPersona, fuerza, agilidadFisica, agilidadMental);
     }
     
-    public Mutante(Persona p) {
+    public Mutante(Persona p) throws MiExcepcion {
         super(p.getNombre(), p.getPoder(), p.getDebilidad(), p.isTipoPersona(), p.getFuerza(), p.getAgilidadFisica(), p.getAgilidadMental());
     }
 
